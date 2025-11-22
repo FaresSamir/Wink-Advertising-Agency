@@ -86,6 +86,46 @@ tl.to("h1 span", {
 );
 
 //About-Section 
+
+const teamMembers = [
+  { img: "IMG/cards/35.webp", name: "Mariam El Desouky", job: "Team Leader, Quality Control" },
+  { img: "IMG/cards/36.webp", name: "Raghda Abo Hindi", job: "HR" },
+  { img: "IMG/cards/3.webp", name: "Mohamed Elkhashab", job: "Media Buyer" },
+  { img: "IMG/cards/4.webp", name: "Omar Kilani", job: "Media Buyer" },
+  { img: "IMG/cards/34.webp", name: "Aya El Sharkawy", job: "Content Creator" },
+  { img: "IMG/cards/16.webp", name: "Salma El Kady", job: "Content Creator" },
+  { img: "IMG/cards/17.webp", name: "Heba Ramadan", job: "Content Creator" },
+  { img: "IMG/cards/28.webp", name: "Rahaf Ehab", job: "Content Creator" },
+  { img: "IMG/cards/38.webp", name: "Heba Fouad", job: "Content Creator" },
+  { img: "IMG/cards/14.webp", name: "Reem Zahra", job: "Content Creator" },
+  { img: "IMG/cards/37.webp", name: "Haneen Gamal", job: "Content Creator" },
+  { img: "IMG/cards/5.webp", name: "Mahmoud Morad", job: "Quality Control" },
+  { img: "IMG/cards/21.webp", name: "Rawan Alawi", job: "Team Leader, Graphic Designer" },
+  { img: "IMG/cards/22.webp", name: "Catherine Saad", job: "Graphic Designer" },
+  { img: "IMG/cards/18.webp", name: "Ebtehal Magdy", job: "Graphic Designer" },
+  { img: "IMG/cards/24.webp", name: "Rana Gharib", job: "Graphic Designer" },
+  { img: "IMG/cards/20.webp", name: "Mariam El Sebaey", job: "Graphic Designer" },
+  { img: "IMG/cards/19.webp", name: "Nada Ashraf", job: "Graphic Designer" },
+  { img: "IMG/cards/29.webp", name: "Lely Emad", job: "Graphic Designer" },
+  { img: "IMG/cards/6.webp", name: "Mahmoud Fouad", job: "Videographer" },
+  { img: "IMG/cards/26.webp", name: "Nour Osama", job: "Videographer" },
+  { img: "IMG/cards/7.webp", name: "Belal Ayman", job: "Video Editor" },
+  { img: "IMG/cards/25.webp", name: "Taif Mounir", job: "Video Editor" },
+  { img: "IMG/cards/27.webp", name: "Jumana Hudayb", job: "Video Editor" },
+  { img: "IMG/cards/23.webp", name: "Salma Abedin", job: "Video Editor" },
+  { img: "IMG/cards/15.webp", name: "Rawan Hamdy", job: "Video Editor" },
+  { img: "IMG/cards/30.webp", name: "Menna El Ziny", job: "Team Leader, Moderation" },
+  { img: "IMG/cards/10.webp", name: "Yomna El Abd", job: "Moderation" },
+  { img: "IMG/cards/33.webp", name: "Salma Mahrous", job: "Moderation" },
+  { img: "IMG/cards/31.webp", name: "Nancy El Shafey", job: "Moderation" },
+  { img: "IMG/cards/9.webp", name: "Shahd Gaber", job: "Moderation" },
+  { img: "IMG/cards/11.webp", name: "Salma Atlam", job: "Moderation" },
+  { img: "IMG/cards/12.webp", name: "Taqa El Shazly", job: "Moderation" },
+  { img: "IMG/cards/13.webp", name: "Mariam Abo Hindi", job: "Moderation" },
+  { img: "IMG/cards/32.webp", name: "Sara Ahmed", job: "Moderation" },
+  { img: "IMG/cards/39.webp", name: "Ahmed Abdelaziz", job: "Financial Manager" }
+];
+
 const aboutItems = document.querySelectorAll(".about-item");
 aboutItems.forEach((item) => {
   item.querySelector(".about-header").addEventListener("click", () => {
@@ -143,6 +183,19 @@ gsap.from(".txt-fo", {
   },
 });
 
+
+ const container = document.querySelector(".cards");
+
+  teamMembers.forEach(member => {
+    const card = `
+      <div class="card">
+        <img src="${member.img}" alt="${member.name}" loading="lazy" width="300" height="300" />
+        <h4>${member.name}</h4>
+        <p>${member.job}</p>
+      </div>
+    `;
+    container.innerHTML += card;
+  });
 
 
 gsap.utils.toArray(".cards .card").forEach((card) => {
